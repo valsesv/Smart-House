@@ -60,7 +60,10 @@ fun ItemScenario(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 if (openDialog.value) {
-                    AlertInfoScenario(openDialog, scenario, scenarios, navController, mainScenario)
+                    mainScenario.value = scenario
+                    navController.navigate("settingScen")
+
+                    //AlertInfoScenario(openDialog, scenario, scenarios, navController, mainScenario)
                 }
                 Image(
                     painter = painterResource(id = scenario.imgId),
@@ -79,7 +82,7 @@ fun ItemScenario(
                 }
             }
             val checkedState = remember { mutableStateOf(scenario.switch) }
-            Log.d("Switchhhh", scenario.switch.toString() + "and " + checkedState.value.toString())
+            Log.d("Switch", scenario.switch.toString() + "and " + checkedState.value.toString())
             Switch(
                 modifier = Modifier.padding(5.dp),
                 checked = scenario.switch.value,

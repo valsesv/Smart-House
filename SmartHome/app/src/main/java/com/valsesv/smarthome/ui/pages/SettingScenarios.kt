@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 import com.valsesv.smarthome.model.MainPage
 import com.valsesv.smarthome.model.Scenario
 import com.valsesv.smarthome.ui.alerts.scenario.AlertAddDeviceInScenario
-import com.valsesv.smarthome.ui.components.scenario.ItemSaveScenarioButton
+import com.valsesv.smarthome.ui.components.scenario.ItemConfirmScenarioButton
 import com.valsesv.smarthome.ui.components.scenario.ScenarioCondition
 import com.valsesv.smarthome.ui.components.scenario.ScenarioDevice
 import com.valsesv.smarthome.ui.components.scenario.SettingScenarioTopBar
@@ -76,6 +76,7 @@ fun SettingScenarios(
                             Text(text = "Название сценария:", fontSize = 20.sp)
                             Row {
                                 TextField(
+                                    placeholder = { Text("Введите название сценария") },
                                     value = messageName.value,
                                     onValueChange = { newText ->
                                         messageName.value = newText
@@ -93,10 +94,10 @@ fun SettingScenarios(
                                 .weight(5f)
                                 .padding(0.dp, 20.dp, 0.dp, 0.dp)
                         ) {
-                            val messageName = remember { mutableStateOf(newScenario.value.name) }
-                            Text(text = "Описание сценария:", fontSize = 20.sp)
+                            val messageName = remember { mutableStateOf("") }
                             Row {
                                 TextField(
+                                    placeholder = { Text("Введите описание") },
                                     value = messageName.value,
                                     onValueChange = { newText ->
                                         messageName.value = newText
@@ -160,7 +161,7 @@ fun SettingScenarios(
                     newScenario.value.devices
                 )
             }
-            ItemSaveScenarioButton(mainPage.mainRoom.value.scenarios, navController, newScenario)
+            ItemConfirmScenarioButton(mainPage.mainRoom.value.scenarios, navController, newScenario)
         }
     }
 }

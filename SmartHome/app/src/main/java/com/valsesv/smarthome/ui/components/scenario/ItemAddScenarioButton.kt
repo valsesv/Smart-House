@@ -30,7 +30,7 @@ fun ItemAddScenarioButton(scenarios: SnapshotStateList<Scenario>, navController:
         mainScenario.value = Scenario(1, "Новый сценарий", "Описание", mutableStateListOf())
     }
     else{
-        mainScenario.value = Scenario(scenarios.last().id+1, "Новый сценарий", "Описание", mutableStateListOf())
+        mainScenario.value = Scenario(scenarios.last().id+1, "", "", mutableStateListOf())
     }
     val openDialog = remember { mutableStateOf(false) }
     Box(

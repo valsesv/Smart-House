@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -110,6 +109,7 @@ fun SettingDevice(openSetting: MutableState<Boolean>, device: Device, devices: S
                 }
                 Row {
                     TextField(
+                        placeholder = { Text("Введите название девайса") },
                         value = messageName.value,
                         onValueChange = { newText ->
                             messageName.value = newText

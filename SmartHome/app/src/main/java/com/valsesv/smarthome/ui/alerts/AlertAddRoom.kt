@@ -25,7 +25,7 @@ import com.valsesv.smarthome.model.Room
 @Composable
 fun AlertAddRoom(open: MutableState<Boolean>, rooms: MutableList<Room>) {
     var newRoom: Room
-    var newName = "Кухня"
+    var newName = ""
 
     AlertDialog(
         onDismissRequest = { open.value = false },
@@ -52,23 +52,14 @@ fun AlertAddRoom(open: MutableState<Boolean>, rooms: MutableList<Room>) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(text = "Новая комната", textAlign = TextAlign.Center)
-                Button(
-                    onClick = {
-                        open.value = false
-                    }) {
-                    Icon(
-                        Icons.Filled.ArrowBack,
-                        contentDescription = "Выход",
-                    )
-                }
             }
         },
         text = {
             Column {
                 val messageName = remember { mutableStateOf(newName) }
-                Text(text = "Название дома:", fontSize=20.sp)
                 Row {
                     TextField(
+                        placeholder = { Text("Введите название комнаты") },
                         value = messageName.value,
                         onValueChange = { newText ->
                             messageName.value = newText
