@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,12 +36,8 @@ fun ItemAddDeviceButton(devices: SnapshotStateList<Device>) {
                 openDialog.value = true;
                 Log.d("Add", devices.toString())
             }) {
-            Icon(
-                Icons.Filled.Add,
-                contentDescription = "Добавить новое устройсво",
-                modifier = Modifier
-                    .size(35.dp)
-            )
+            Text(
+                text = "Добавить устройство")
         }
         if (openDialog.value) {
             AlertAddDevices(openDialog, devices)

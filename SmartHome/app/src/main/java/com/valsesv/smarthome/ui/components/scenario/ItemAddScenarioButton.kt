@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateListOf
@@ -27,12 +28,11 @@ import com.valsesv.smarthome.model.Scenario
 @Composable
 fun ItemAddScenarioButton(scenarios: SnapshotStateList<Scenario>, navController: NavController, mainScenario: MutableState<Scenario>) {
     if(scenarios.isEmpty()){
-        mainScenario.value = Scenario(1, "Новый сценарий", "Описание", mutableStateListOf())
+        mainScenario.value = Scenario(1, "", "", mutableStateListOf())
     }
     else{
         mainScenario.value = Scenario(scenarios.last().id+1, "", "", mutableStateListOf())
     }
-    val openDialog = remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
             .background(Color.Transparent),
@@ -42,19 +42,10 @@ fun ItemAddScenarioButton(scenarios: SnapshotStateList<Scenario>, navController:
             modifier = Modifier
                 .padding(15.dp),
             onClick = {
-
                 navController.navigate("settingScen")
                 Log.d("Add", scenarios.toString())
             }) {
-            Icon(
-                Icons.Filled.Add,
-                contentDescription = "Добавить новый сценарий",
-                modifier = Modifier
-                    .size(35.dp)
-            )
-        }
-        if (openDialog.value) {
-            //AlertAddDevices(openDialog, scenarios)
+            Text(text = "Добавить сценарий")
         }
     }
 }

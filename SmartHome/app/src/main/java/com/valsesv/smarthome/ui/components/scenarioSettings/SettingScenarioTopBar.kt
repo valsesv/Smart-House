@@ -1,4 +1,4 @@
-package com.valsesv.smarthome.ui.components.scenario
+package com.valsesv.smarthome.ui.components.scenarioSettings
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons

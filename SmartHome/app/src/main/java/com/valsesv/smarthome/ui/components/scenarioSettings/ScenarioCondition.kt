@@ -1,4 +1,4 @@
-package com.valsesv.smarthome.ui.components.scenario
+package com.valsesv.smarthome.ui.components.scenarioSettings
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image

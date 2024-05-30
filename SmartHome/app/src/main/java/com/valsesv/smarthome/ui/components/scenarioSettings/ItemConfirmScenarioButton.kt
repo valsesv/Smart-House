@@ -1,4 +1,4 @@
-package com.valsesv.smarthome.ui.components.scenario
+package com.valsesv.smarthome.ui.components.scenarioSettings
 
 import android.util.Log
 import androidx.compose.foundation.background

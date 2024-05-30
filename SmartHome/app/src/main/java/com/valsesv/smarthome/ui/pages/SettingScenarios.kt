@@ -31,10 +31,10 @@ import androidx.navigation.NavController
 import com.valsesv.smarthome.model.MainPage
 import com.valsesv.smarthome.model.Scenario
 import com.valsesv.smarthome.ui.alerts.scenario.AlertAddDeviceInScenario
-import com.valsesv.smarthome.ui.components.scenario.ItemConfirmScenarioButton
-import com.valsesv.smarthome.ui.components.scenario.ScenarioCondition
-import com.valsesv.smarthome.ui.components.scenario.ScenarioDevice
-import com.valsesv.smarthome.ui.components.scenario.SettingScenarioTopBar
+import com.valsesv.smarthome.ui.components.scenarioSettings.ItemConfirmScenarioButton
+import com.valsesv.smarthome.ui.components.scenarioSettings.ScenarioCondition
+import com.valsesv.smarthome.ui.components.scenarioSettings.ScenarioDevice
+import com.valsesv.smarthome.ui.components.scenarioSettings.SettingScenarioTopBar
 
 @Composable
 fun SettingScenarios(
@@ -73,7 +73,6 @@ fun SettingScenarios(
                                 .padding(0.dp, 20.dp, 0.dp, 0.dp)
                         ) {
                             val messageName = remember { mutableStateOf(newScenario.value.name) }
-                            Text(text = "Название сценария:", fontSize = 20.sp)
                             Row {
                                 TextField(
                                     placeholder = { Text("Введите название сценария") },
