@@ -39,6 +39,7 @@ fun ItemAddScenarioButton(scenarios: SnapshotStateList<Scenario>, navController:
         contentAlignment = Alignment.Center
     ) {
         Button(
+
             modifier = Modifier
                 .padding(15.dp),
             onClick = {

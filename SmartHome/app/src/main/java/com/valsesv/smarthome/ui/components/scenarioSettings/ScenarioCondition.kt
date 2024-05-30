@@ -60,7 +60,7 @@ fun ScenarioCondition(newScenario: MutableState<Scenario>, devices: SnapshotStat
                     AlertSetCondition(openDialog, newScenario, devices)
                 }
                 Image(
-                    painter = painterResource(id = R.drawable.scen),
+                    painter = painterResource(id = R.drawable.time),
                     contentDescription = "картинка",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
